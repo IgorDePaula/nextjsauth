@@ -3,8 +3,8 @@ import '../styles/global.css'
 import Head from 'next/head'
 import { Provider } from 'next-auth/client'
 
-export default function App ({ Component, pageProps }) {
-    console.log('pageprops', pageProps.session)
+export default  function App ({ Component, pageProps }) {
+    console.log('pageprops', pageProps)
     return (
         <Provider session={pageProps.session}>
             <>

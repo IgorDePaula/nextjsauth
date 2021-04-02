@@ -32,7 +32,7 @@ export default function Login () {
     const handleLoginGithub = (e) => {
         e.preventDefault()
         setIsLoginStarted(true)
-        signIn('GitHub')
+        signIn('github', { callbackUrl: 'http://localhost:3000/welcome' })
     }
 
     return (
@@ -51,7 +51,7 @@ export default function Login () {
                         <input id='inputPassword' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <button type='submit' disabled={isLoginStarted} className={styles.blueButtonRound}>Log In</button>
                     </form>
-                    <button type='submit' disabled={isLoginStarted} onClick={()=>signIn('github')} className={styles.blueButtonRound}>Github</button>
+                    <button type='submit' disabled={isLoginStarted} onClick={e=>handleLoginGithub(e)} className={styles.blueButtonRound}>Github</button>
                 </div>
             </main>
         </div>

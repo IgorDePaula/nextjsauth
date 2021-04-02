@@ -33,8 +33,8 @@ const providers = [
         }
     }),
     Providers.GitHub({
-        clientId: 'Iv1xxxxxxxxxxxxx',//process.env.GITHUB_CLIENT_ID,
-        clientSecret: 'af5bd8xxxxxxxxxxxxxxxxxxxxxxxx',// process.env.GITHUB_CLIENT_SECRET
+        clientId: 'Iv1.exxxxxxxxxxxxxxx',//process.env.GITHUB_CLIENT_ID,
+        clientSecret: 'af5bd8dbxxxxxxxxxxxxxxx',// process.env.GITHUB_CLIENT_SECRET
 
     })
 ]
@@ -54,7 +54,7 @@ const callbacks = {
     async session(session, token) {
         console.log('token', token)
         console.log('session', session)
-        session.accessToken = token.accessToken
+        //session.accessToken = token.accessToken
         return session
     }
 }

@@ -14,7 +14,7 @@ export default function Welcome () {
     }, [loading, session])
 
     return (
-        <div class={styles.container}>
+        <div className={styles.container}>
             <h1>Welcome Page</h1>
             <button onClick={() => signOut()}>Log Out</button>
         </div>
