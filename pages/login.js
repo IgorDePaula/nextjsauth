@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/pageStyles/login.module.scss'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { signIn, useSession } from 'next-auth/client'
+import { signIn } from 'next-auth/client'
 
 export default function Login () {
     const [email, setEmail] = useState('')

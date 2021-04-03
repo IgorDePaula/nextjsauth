@@ -7,8 +7,11 @@ export default NextAuth({
     error: "/login", // Changing the error redirect page to our custom login page
   },
   callbacks: {
-    async jwt(token, _, account) {
-      if (account) {
+    async jwt(token, user, account) {
+      if(user && user.hasOwnProperty('data')){
+        token.accessToken = user.data
+      }
+      if(account && account.hasOwnProperty('type') && account.type === 'oauth'){
         token.accessToken = account.accessToken
       }
       return token
@@ -39,8 +42,8 @@ export default NextAuth({
       },
     }),
     Providers.GitHub({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: 'Iv1.xxxxxx',//process.env.GITHUB_CLIENT_ID,
+      clientSecret: 'af5bd8db2xxxxxxx'
     }),
   ],
 })
